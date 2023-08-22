@@ -1,25 +1,45 @@
 import logo from './logo.svg';
 import './App.css';
+import {useEffect, useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [width, setWidth] = useState(0);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setWidth((prevWidth) => prevWidth + 0.5);
+        }, 40);
+        setTimeout(() => {
+            clearInterval(interval);
+            setIsLoading(false); // установка состояния после завершения загрузки
+        }, 4000);
+    }, []);
+
+
+    return (
+        <div className="Main">
+            {isLoading ? (
+                <div className="PreLoad">
+                    <div className="Center">
+                        <h1>PROMENADE</h1>
+                        <div className="loader">
+                            <div className="load-back"></div>
+                            <div className="load-front" style={{width: `${width}%`}}></div>
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                <div className="Promo">
+                    <div className="Center">
+                        <h1>PROMENADE</h1>
+                        <span>moscow</span>
+                        <span className="loading">2024</span>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
 }
 
 export default App;
