@@ -3,13 +3,29 @@ body {
   background-color: #000000;
 }
 
-h1 {
-  color: #FFFFFF;
-  font-size: 64px;
+
+@media (min-width: 0px) and (max-width: 640px) {
+  h1 {
+    color: #FFFFFF;
+    font-size: 48px;
+  }
+
+  span {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 24px;
+  }
 }
 
-span {
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 32px;
+@media (min-width: 640px) {
+  h1 {
+    color: #FFFFFF;
+    font-size: 64px;
+  }
+
+  span {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 32px;
+  }
 }

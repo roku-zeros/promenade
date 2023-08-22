@@ -9,11 +9,11 @@ function App() {
     useEffect(() => {
         const interval = setInterval(() => {
             setWidth((prevWidth) => prevWidth + 0.5);
-        }, 40);
+        }, 50);
         setTimeout(() => {
             clearInterval(interval);
             setIsLoading(false); // установка состояния после завершения загрузки
-        }, 4000);
+        }, 5000);
     }, []);
 
 
@@ -33,7 +33,7 @@ function App() {
                 <div className="Promo">
                     <div className="Center">
                         <h1>PROMENADE</h1>
-                        <span>moscow</span>
+                        <span style={{ marginTop: "-12px"}}>moscow</span>
                         <span className="loading">2024</span>
                     </div>
                 </div>
