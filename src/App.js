@@ -8,8 +8,8 @@ function App() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setWidth((prevWidth) => prevWidth + 0.5);
-        }, 50);
+            setWidth((prevWidth) => prevWidth + 0.106);
+        }, 10);
         setTimeout(() => {
             clearInterval(interval);
             setIsLoading(false); // установка состояния после завершения загрузки
@@ -33,8 +33,9 @@ function App() {
                 <div className="Promo">
                     <div className="Center">
                         <h1>PROMENADE</h1>
-                        <span style={{ marginTop: "-12px"}}>moscow</span>
-                        <span className="loading">2024</span>
+                        <span style={{ marginTop: "-8px"}}>la vie c’est une promenade</span>
+                        <span>moscow</span>
+                        <span style={{ marginTop: "4px"}}>2024</span>
                     </div>
                 </div>
             )}
